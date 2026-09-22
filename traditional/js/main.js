@@ -2,12 +2,12 @@
 
 // Works data (used on works.html and index.html)
 const WORKS_PROJECTS = [
-  { id: 1, title: 'E-Commerce Platform', category: 'Web Application', icon: 'cart-outline', description: 'A complete e-commerce solution with cart, checkout, payment integration, admin dashboard, and inventory management.', tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS'], features: ['User authentication', 'Product management', 'Order tracking', 'Admin analytics', 'Email notifications'], links: { demo: '#', github: '#', caseStudy: '#' } },
-  { id: 2, title: 'Task Management App', category: 'Web Application', icon: 'clipboard-outline', description: 'Collaborative project management tool with real-time updates, team workspaces, and advanced reporting.', tech: ['Vue.js', 'Firebase', 'TypeScript', 'Tailwind CSS'], features: ['Real-time collaboration', 'Kanban boards', 'Time tracking', 'Team workspaces', 'Export reports'], links: { demo: '#', github: '#', caseStudy: '#' } },
-  { id: 3, title: 'Weather Dashboard', category: 'Web Application', icon: 'partly-sunny-outline', description: 'Beautiful weather application with location-based forecasts, historical data, and interactive charts.', tech: ['React', 'Weather API', 'Chart.js', 'CSS Modules'], features: ['Current conditions', '7-day forecast', 'Historical data', 'Interactive charts', 'Geolocation'], links: { demo: '#', github: '#', caseStudy: '#' } },
-  { id: 4, title: 'Fitness Tracker', category: 'Mobile App', icon: 'fitness-outline', description: 'Cross-platform fitness application with workout tracking, progress analytics, and social features.', tech: ['React Native', 'Expo', 'AsyncStorage', 'React Navigation'], features: ['Workout logging', 'Progress photos', 'Statistics', 'Social sharing', 'Offline support'], links: { demo: '#', github: '#', caseStudy: '#' } },
-  { id: 5, title: 'Portfolio Website', category: 'Web Application', icon: 'desktop-outline', description: 'This very portfolio website built with modern CSS featuring dark theme and smooth animations.', tech: ['HTML', 'CSS', 'JavaScript', 'CSS Variables', 'IonIcons'], features: ['Dark theme', 'Responsive design', 'Smooth animations', 'Modular architecture', 'Accessible'], links: { demo: '#', github: '#', caseStudy: '#' } },
-  { id: 6, title: 'API Gateway Service', category: 'Web Application', icon: 'server-outline', description: 'High-performance API gateway with rate limiting, authentication, request/response transformation, and monitoring.', tech: ['Node.js', 'Express', 'Redis', 'Docker', 'Prometheus'], features: ['Rate limiting', 'JWT authentication', 'Request validation', 'Load balancing', 'Metrics & logging'], links: { demo: '#', github: '#', caseStudy: '#' } }
+  { id: 1, title: 'E-Commerce Platform', category: 'Web App', icon: 'cart-outline', description: 'A complete e-commerce solution with cart, checkout, payment integration, admin dashboard, and inventory management.', tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS'], features: ['User authentication', 'Product management', 'Order tracking', 'Admin analytics', 'Email notifications'], links: { demo: '#', github: '#', caseStudy: '#' } },
+  { id: 2, title: 'Task Management App', category: 'Soft App', icon: 'clipboard-outline', description: 'Collaborative project management tool with real-time updates, team workspaces, and advanced reporting.', tech: ['Vue.js', 'Firebase', 'TypeScript', 'Tailwind CSS'], features: ['Real-time collaboration', 'Kanban boards', 'Time tracking', 'Team workspaces', 'Export reports'], links: { demo: '#', github: '#', caseStudy: '#' } },
+  { id: 3, title: 'Weather Dashboard', category: 'Web App', icon: 'partly-sunny-outline', description: 'Beautiful weather application with location-based forecasts, historical data, and interactive charts.', tech: ['React', 'Weather API', 'Chart.js', 'CSS Modules'], features: ['Current conditions', '7-day forecast', 'Historical data', 'Interactive charts', 'Geolocation'], links: { demo: '#', github: '#', caseStudy: '#' } },
+  { id: 4, title: 'Fitness Tracker', category: 'In Progress', icon: 'fitness-outline', description: 'Cross-platform fitness application with workout tracking, progress analytics, and social features.', tech: ['React Native', 'Expo', 'AsyncStorage', 'React Navigation'], features: ['Workout logging', 'Progress photos', 'Statistics', 'Social sharing', 'Offline support'], links: { demo: '#', github: '#', caseStudy: '#' } },
+  { id: 5, title: 'Portfolio Website', category: 'Web App', icon: 'desktop-outline', description: 'This very portfolio website built with modern CSS featuring dark theme and smooth animations.', tech: ['HTML', 'CSS', 'JavaScript', 'CSS Variables', 'IonIcons'], features: ['Dark theme', 'Responsive design', 'Smooth animations', 'Modular architecture', 'Accessible'], links: { demo: '#', github: '#', caseStudy: '#' } },
+  { id: 6, title: 'API Gateway Service', category: 'In Progress', icon: 'server-outline', description: 'High-performance API gateway with rate limiting, authentication, request/response transformation, and monitoring.', tech: ['Node.js', 'Express', 'Redis', 'Docker', 'Prometheus'], features: ['Rate limiting', 'JWT authentication', 'Request validation', 'Load balancing', 'Metrics & logging'], links: { demo: '#', github: '#', caseStudy: '#' } }
 ];
 
 let currentFilter = 'all';
@@ -28,6 +28,8 @@ async function loadTopbar() {
 function initTopbar() {
   const topbar = document.getElementById('topbar');
   const links = document.querySelectorAll('.topbar-link');
+  const progressFill = document.querySelector('.topbar-progress-fill');
+  const topbarList = document.querySelector('.topbar-list');
 
   // Highlight current page
   const currentPage = getCurrentPage();
@@ -37,11 +39,36 @@ function initTopbar() {
     }
   });
 
+  // Update progress bar based on actual nav item positions
+  if (progressFill && topbarList) {
+    updateProgressBar(links, progressFill, topbarList, currentPage);
+    
+    // Recalculate on resize
+    window.addEventListener('resize', () => {
+      updateProgressBar(links, progressFill, topbarList, currentPage);
+    });
+  }
+
   // Scroll effect
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) topbar.classList.add('scrolled');
     else topbar.classList.remove('scrolled');
   });
+}
+
+function updateProgressBar(links, progressFill, topbarList, currentPage) {
+  // Percentage widths for each page (from Home to Contact)
+  const pageProgress = {
+    'home': 18,
+    'services': 38,
+    'about': 62,
+    'works': 80,
+    'contact': 100
+  };
+
+  const percent = pageProgress[currentPage] || 0;
+  progressFill.style.width = `${percent}%`;
+  progressFill.style.transform = 'none';
 }
 
 function getCurrentPage() {
@@ -76,6 +103,7 @@ function initPage() {
   initModal();
   initSmoothScroll();
   initIntersectionObserver();
+  initScrollTopButton();
 }
 
 // Works page (works.html)
@@ -282,4 +310,26 @@ if (document.readyState === 'loading') {
   });
 } else {
   loadTopbar().then(initPage);
+}
+
+// Scroll to top button
+function initScrollTopButton() {
+  const scrollTopBtn = document.getElementById('scroll-top-btn');
+  if (!scrollTopBtn) return;
+
+  // Show/hide based on scroll position
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add('visible');
+      scrollTopBtn.hidden = false;
+    } else {
+      scrollTopBtn.classList.remove('visible');
+      scrollTopBtn.hidden = true;
+    }
+  });
+
+  // Scroll to top on click
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }

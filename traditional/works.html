@@ -30,11 +30,17 @@
       <div class="section-container">
         <div class="filter-tabs" role="tablist" aria-label="Project categories" id="filter-tabs">
           <button role="tab" aria-selected="true" class="filter-tab active" data-filter="all">All Projects</button>
-          <button role="tab" aria-selected="false" class="filter-tab" data-filter="Web Application">Web Application</button>
-          <button role="tab" aria-selected="false" class="filter-tab" data-filter="Mobile App">Mobile App</button>
-          <button role="tab" aria-selected="false" class="filter-tab" data-filter="E-commerce">E-commerce</button>
+          <button role="tab" aria-selected="false" class="filter-tab" data-filter="Web App">Web Applications</button>
+          <button role="tab" aria-selected="false" class="filter-tab" data-filter="Soft App">Software Applications</button>
+          <button role="tab" aria-selected="false" class="filter-tab" data-filter="In Progress">In Progress</button>
         </div>
         <div class="works-grid" id="works-grid" role="tabpanel" aria-label="Projects"></div>
+      </div>
+      <div class="next-page-wrapper">
+        <a href="contact.html" class="next-page-btn" aria-label="Next: Contact">
+          <span>Explore Next</span>
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </a>
       </div>
     </section>
   </main>
@@ -47,6 +53,10 @@
     <h2 id="modal-title" class="modal-title"></h2>
     <div class="modal-content" id="modal-content"></div>
   </div>
+
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top" hidden>
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </button>
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

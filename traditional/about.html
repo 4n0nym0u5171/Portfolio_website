@@ -25,7 +25,7 @@
             <div class="avatar-placeholder"><ion-icon name="person-outline"></ion-icon></div>
           </div>
           <div class="about-intro">
-            <h3 class="about-name">Joe Ford</h3>
+            <h3 class="about-name">Joeford Torculas</h3>
             <p class="about-title">Aspiring Web Developer</p>
             <p class="about-bio">
               Passionate developer building web and mobile applications.
@@ -47,7 +47,45 @@
       </div>
     </section>
 
-    <section id="education" aria-labelledby="education-title">
+    <section id="experience" aria-labelledby="experience-title">
+      <div class="section-container">
+        <header class="section-header">
+          <h2 id="experience-title" class="section-title article-title">Work Experience</h2>
+          <p class="section-subtitle">Professional Journey</p>
+        </header>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-period">2022 — Present</div>
+              <h4 class="timeline-role">Senior Full Stack Developer</h4>
+              <p class="timeline-company">Tech Company Inc.</p>
+              <p class="timeline-description">Leading development of core products. Architected microservices, improved performance by 40%, mentored junior developers.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-period">2020 — 2022</div>
+              <h4 class="timeline-role">Full Stack Developer</h4>
+              <p class="timeline-company">StartupXYZ</p>
+              <p class="timeline-description">Built and maintained multiple client projects. Implemented CI/CD pipelines, reduced deployment time by 60%.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-period">2019 — 2020</div>
+              <h4 class="timeline-role">Junior Developer</h4>
+              <p class="timeline-company">Digital Agency</p>
+              <p class="timeline-description">Developed responsive websites and web applications. Collaborated with designers to implement pixel-perfect UIs.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section-alternate" aria-labelledby="education-title">
       <div class="section-container">
         <header class="section-header">
           <h2 id="education-title" class="section-title article-title">Education</h2>
@@ -76,7 +114,7 @@
       </div>
     </section>
 
-    <section id="skills" class="section-alternate" aria-labelledby="skills-title">
+    <section id="skills" aria-labelledby="skills-title">
       <div class="section-container">
         <header class="section-header">
           <h2 id="skills-title" class="section-title article-title">Skills</h2>
@@ -141,7 +179,7 @@
       </div>
     </section>
 
-    <section id="traits" aria-labelledby="traits-title">
+    <section id="traits" class="section-alternate" aria-labelledby="traits-title">
       <div class="section-container">
         <header class="section-header">
           <h2 id="traits-title" class="section-title article-title">Traits</h2>
@@ -182,10 +220,10 @@
       </div>
     </section>
 
-    <section id="hobbies" class="section-alternate" aria-labelledby="hobbies-title">
+    <section id="hobbies" aria-labelledby="hobbies-title">
       <div class="section-container">
         <header class="section-header">
-          <h2 id="hobbies-title" class="section-title article-title">Hobbies</h2>
+          <h2 id="hobbies-title" class="section-title article-title">Interests & Hobbies</h2>
           <p class="section-subtitle">Outside of Work</p>
         </header>
         <div class="hobbies-grid">
@@ -221,57 +259,11 @@
           </article>
         </div>
       </div>
-    </section>
-
-    <section id="experience" aria-labelledby="experience-title">
-      <div class="section-container">
-        <header class="section-header">
-          <h2 id="experience-title" class="section-title article-title">Experience</h2>
-          <p class="section-subtitle">Professional Journey</p>
-        </header>
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-period">2022 — Present</div>
-              <h4 class="timeline-role">Senior Full Stack Developer</h4>
-              <p class="timeline-company">Tech Company Inc.</p>
-              <p class="timeline-description">Leading development of core products. Architected microservices, improved performance by 40%, mentored junior developers.</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-period">2020 — 2022</div>
-              <h4 class="timeline-role">Full Stack Developer</h4>
-              <p class="timeline-company">StartupXYZ</p>
-              <p class="timeline-description">Built and maintained multiple client projects. Implemented CI/CD pipelines, reduced deployment time by 60%.</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-period">2019 — 2020</div>
-              <h4 class="timeline-role">Junior Developer</h4>
-              <p class="timeline-company">Digital Agency</p>
-              <p class="timeline-description">Developed responsive websites and web applications. Collaborated with designers to implement pixel-perfect UIs.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="cv-download" class="section-alternate" aria-labelledby="cv-title">
-      <div class="section-container">
-        <div class="cv-content">
-          <div class="cv-icon"><ion-icon name="document-text-outline"></ion-icon></div>
-          <h3 class="cv-title">Download My CV</h3>
-          <p class="cv-text">Get a detailed overview of my experience, skills, and projects.</p>
-          <button class="btn btn--primary btn--lg" onclick="alert('CV download coming soon')">
-            Download CV
-            <ion-icon name="download-outline"></ion-icon>
-          </button>
-        </div>
+      <div class="next-page-wrapper">
+        <a href="works.html" class="next-page-btn" aria-label="Next: Works">
+          <span>Explore Next</span>
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </a>
       </div>
     </section>
   </main>
@@ -284,6 +276,10 @@
     <h2 id="modal-title" class="modal-title"></h2>
     <div class="modal-content" id="modal-content"></div>
   </div>
+
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top" hidden>
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </button>
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
