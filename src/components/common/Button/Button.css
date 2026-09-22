@@ -1,0 +1,118 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-400);
+  text-transform: capitalize;
+  transition: var(--transition-1);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.btn ion-icon { font-size: 16px; }
+
+/* Variants */
+.btn--primary {
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  box-shadow: var(--shadow-3);
+}
+
+.btn--primary::before {
+  background: var(--bg-gradient-jet);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--bg-gradient-yellow-1);
+}
+
+.btn--primary:hover:not(:disabled)::before {
+  background: var(--bg-gradient-yellow-2);
+}
+
+.btn--secondary {
+  background: var(--eerie-black-2);
+  color: var(--white-2);
+  border: 1px solid var(--jet);
+  box-shadow: var(--shadow-1);
+}
+
+.btn--secondary::before {
+  background: var(--eerie-black-1);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--onyx);
+  border-color: var(--orange-yellow-crayola);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--orange-yellow-crayola);
+  border: 2px solid var(--orange-yellow-crayola);
+}
+
+.btn--outline::before {
+  background: transparent;
+}
+
+.btn--outline:hover:not(:disabled) {
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+}
+
+/* Sizes */
+.btn--sm {
+  padding: 10px 16px;
+  font-size: var(--fs-7);
+}
+
+.btn--md {
+  padding: 13px 24px;
+  font-size: var(--fs-6);
+}
+
+.btn--lg {
+  padding: 16px 32px;
+  font-size: var(--fs-5);
+}
+
+/* States */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--orange-yellow-crayola);
+  outline-offset: 2px;
+}
+
+@media (min-width: 580px) {
+  .btn--sm {
+    padding: 12px 20px;
+    font-size: var(--fs-7);
+  }
+
+  .btn--md {
+    padding: 15px 28px;
+    font-size: var(--fs-6);
+  }
+
+  .btn--lg {
+    padding: 18px 36px;
+    font-size: var(--fs-5);
+  }
+}

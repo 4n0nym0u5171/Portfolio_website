@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works - Joe Ford</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header id="topbar-placeholder"></header>
+
+  <main id="main-content">
+    <section id="works-hero" aria-labelledby="works-title">
+      <div class="section-container">
+        <header class="section-header">
+          <h2 id="works-title" class="section-title article-title">Works</h2>
+          <p class="section-subtitle">What I've Done</p>
+        </header>
+        <p class="works-hero-text">
+          A collection of projects I've worked on. Each project represents a unique challenge and learning experience.
+          Click on any project to learn more.
+        </p>
+      </div>
+    </section>
+
+    <section id="works-filters" class="section-alternate" aria-labelledby="works-filters-title">
+      <div class="section-container">
+        <div class="filter-tabs" role="tablist" aria-label="Project categories" id="filter-tabs">
+          <button role="tab" aria-selected="true" class="filter-tab active" data-filter="all">All Projects</button>
+          <button role="tab" aria-selected="false" class="filter-tab" data-filter="Web Application">Web Application</button>
+          <button role="tab" aria-selected="false" class="filter-tab" data-filter="Mobile App">Mobile App</button>
+          <button role="tab" aria-selected="false" class="filter-tab" data-filter="E-commerce">E-commerce</button>
+        </div>
+        <div class="works-grid" id="works-grid" role="tabpanel" aria-label="Projects"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="modal-overlay" aria-hidden="true"></div>
+  <div class="modal-container" id="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close-btn" id="modal-close" aria-label="Close modal">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <h2 id="modal-title" class="modal-title"></h2>
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

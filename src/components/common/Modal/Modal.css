@@ -1,0 +1,106 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: hsl(0, 0%, 5%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 100;
+  transition: var(--transition-1);
+}
+
+.modal-overlay:not(:empty) {
+  opacity: 0.8;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.1);
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  box-shadow: var(--shadow-5);
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: var(--transition-1);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.modal-container:not(:empty) {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.modal-container--sm { width: 90%; max-width: 400px; }
+.modal-container--md { width: 90%; max-width: 600px; }
+.modal-container--lg { width: 90%; max-width: 800px; }
+.modal-container--xl { width: 95%; max-width: 1000px; }
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--onyx);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-2);
+  font-size: 20px;
+  opacity: 0.7;
+  transition: var(--transition-1);
+  z-index: 10;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  opacity: 1;
+  background: var(--jet);
+}
+
+.modal-close-btn ion-icon { --ionicon-stroke-width: 50px; }
+
+.modal-title {
+  color: var(--white-2);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-600);
+  margin-bottom: 20px;
+  padding-right: 50px;
+}
+
+.modal-content {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.7;
+}
+
+@media (min-width: 580px) {
+  .modal-container {
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  .modal-title {
+    font-size: var(--fs-1);
+  }
+
+  .modal-content {
+    font-size: var(--fs-5);
+  }
+}

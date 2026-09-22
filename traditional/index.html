@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joe Ford - Web Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header id="topbar-placeholder"></header>
+
+  <main id="main-content">
+    <section id="hero" class="hero-section" aria-label="Hero section">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Hi, I'm <span class="name-joe">Joe</span><span class="name-ford">ford</span>
+          </h1>
+          <p class="hero-tagline">
+            I'm an aspiring web developer creating solutions for organizational needs,
+            in pursuit of solving challenges and easing difficulties,
+            an excellent team member that continues to grow in expertise
+            and share knowledge within the collaborative group.
+          </p>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn--primary btn--lg">
+              Contact Me
+              <ion-icon name="mail-outline"></ion-icon>
+            </a>
+            <a href="about.html" class="btn btn--secondary btn--lg">
+              Learn More
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-wrapper">
+            <div class="hero-placeholder" aria-hidden="true">
+              <ion-icon name="person-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="section-alternate" aria-labelledby="works-title">
+      <div class="section-container">
+        <header class="section-header">
+          <h2 id="works-title" class="section-title article-title">Works</h2>
+          <p class="section-subtitle">What I've Done</p>
+        </header>
+        <div class="works-grid" id="home-works-grid">
+          <article class="work-card">
+            <div class="work-image">
+              <div class="work-placeholder"><ion-icon name="desktop-outline"></ion-icon></div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Project One</h3>
+              <p class="work-category">Web Application</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-image">
+              <div class="work-placeholder"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Project Two</h3>
+              <p class="work-category">Mobile App</p>
+            </div>
+          </article>
+          <article class="work-card">
+            <div class="work-image">
+              <div class="work-placeholder"><ion-icon name="cart-outline"></ion-icon></div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Project Three</h3>
+              <p class="work-category">E-commerce</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-alternate" aria-labelledby="contact-title">
+      <div class="section-container">
+        <header class="section-header">
+          <h2 id="contact-title" class="section-title article-title">Contact Me</h2>
+          <p class="section-subtitle">Let's Talk</p>
+        </header>
+        <div class="contact-content">
+          <p class="contact-text">
+            Have a project in mind or just want to say hello? I'd love to hear from you.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:joeford@example.com" class="contact-link">
+              <div class="contact-link-icon"><ion-icon name="mail-outline"></ion-icon></div>
+              <span>Email Me</span>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </a>
+            <a href="https://github.com/joeford" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <div class="contact-link-icon"><ion-icon name="logo-github"></ion-icon></div>
+              <span>GitHub</span>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </a>
+            <a href="https://linkedin.com/in/joeford" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <div class="contact-link-icon"><ion-icon name="logo-linkedin"></ion-icon></div>
+              <span>LinkedIn</span>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="modal-overlay" aria-hidden="true"></div>
+  <div class="modal-container" id="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close-btn" id="modal-close" aria-label="Close modal">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <h2 id="modal-title" class="modal-title"></h2>
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
