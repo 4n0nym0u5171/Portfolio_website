@@ -45,84 +45,54 @@
         </div>
       </div>
     </section>
-
-    <section id="works" class="section-alternate" aria-labelledby="works-title">
-      <div class="section-container">
-        <header class="section-header">
-          <h2 id="works-title" class="section-title article-title">Works</h2>
-          <p class="section-subtitle">What I've Done</p>
-        </header>
-        <div class="works-grid" id="home-works-grid">
-          <article class="work-card">
-            <div class="work-image">
-              <div class="work-placeholder"><ion-icon name="desktop-outline"></ion-icon></div>
-            </div>
-            <div class="work-content">
-              <h3 class="work-title">Project One</h3>
-              <p class="work-category">Web Application</p>
-            </div>
-          </article>
-          <article class="work-card">
-            <div class="work-image">
-              <div class="work-placeholder"><ion-icon name="phone-portrait-outline"></ion-icon></div>
-            </div>
-            <div class="work-content">
-              <h3 class="work-title">Project Two</h3>
-              <p class="work-category">Mobile App</p>
-            </div>
-          </article>
-          <article class="work-card">
-            <div class="work-image">
-              <div class="work-placeholder"><ion-icon name="cart-outline"></ion-icon></div>
-            </div>
-            <div class="work-content">
-              <h3 class="work-title">Project Three</h3>
-              <p class="work-category">E-commerce</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section-alternate" aria-labelledby="contact-title">
-      <div class="section-container">
-        <header class="section-header">
-          <h2 id="contact-title" class="section-title article-title">Contact Me</h2>
-          <p class="section-subtitle">Let's Talk</p>
-        </header>
-        <div class="contact-content">
-          <p class="contact-text">
-            Have a project in mind or just want to say hello? I'd love to hear from you.
-          </p>
-          <div class="contact-links">
-            <a href="mailto:joeford@example.com" class="contact-link">
-              <div class="contact-link-icon"><ion-icon name="mail-outline"></ion-icon></div>
-              <span>Email Me</span>
-              <ion-icon name="chevron-forward-outline"></ion-icon>
-            </a>
-            <a href="https://github.com/joeford" target="_blank" rel="noopener noreferrer" class="contact-link">
-              <div class="contact-link-icon"><ion-icon name="logo-github"></ion-icon></div>
-              <span>GitHub</span>
-              <ion-icon name="chevron-forward-outline"></ion-icon>
-            </a>
-            <a href="https://linkedin.com/in/joeford" target="_blank" rel="noopener noreferrer" class="contact-link">
-              <div class="contact-link-icon"><ion-icon name="logo-linkedin"></ion-icon></div>
-              <span>LinkedIn</span>
-              <ion-icon name="chevron-forward-outline"></ion-icon>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <div class="modal-overlay" id="modal-overlay" aria-hidden="true"></div>
-  <div class="modal-container" id="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <button class="modal-close-btn" id="modal-close" aria-label="Close modal">
+  <!-- Project Modal -->
+  <div class="project-modal-overlay" id="project-modal-overlay" aria-hidden="true"></div>
+  <div class="project-modal-container" id="project-modal-container" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <button class="project-modal-close" id="project-modal-close" aria-label="Close modal">
       <ion-icon name="close-outline"></ion-icon>
     </button>
-    <h2 id="modal-title" class="modal-title"></h2>
-    <div class="modal-content" id="modal-content"></div>
+
+    <div class="project-modal-body">
+      <!-- Media Panel (Left) -->
+      <div class="project-modal-media" id="project-modal-media">
+        <div class="project-modal-slideshow" id="project-modal-slideshow">
+          <button class="slideshow-nav slideshow-prev" id="slideshow-prev" aria-label="Previous screenshot">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </button>
+          <div class="slideshow-track" id="slideshow-track"></div>
+          <button class="slideshow-nav slideshow-next" id="slideshow-next" aria-label="Next screenshot">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </div>
+        <div class="slideshow-pagination" id="slideshow-pagination" aria-label="Screenshot navigation"></div>
+      </div>
+
+      <!-- Details Panel (Right) -->
+      <div class="project-modal-details" id="project-modal-details">
+        <header class="project-modal-header">
+          <span class="project-modal-category" id="project-modal-category"></span>
+          <h2 id="project-modal-title" class="project-modal-title"></h2>
+        </header>
+        <div class="project-modal-tags" id="project-modal-tags"></div>
+        <p class="project-modal-description" id="project-modal-description"></p>
+        <section class="project-modal-features" id="project-modal-features-section" aria-labelledby="features-title">
+          <h3 id="features-title" class="project-modal-features-title">Key Features</h3>
+          <ul class="project-modal-features-list" id="project-modal-features-list"></ul>
+        </section>
+        <footer class="project-modal-actions" id="project-modal-actions">
+          <a href="#" class="project-modal-btn project-modal-btn--primary" id="project-modal-github" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="logo-github"></ion-icon>
+            <span>Source Code</span>
+          </a>
+          <a href="#" class="project-modal-btn project-modal-btn--secondary" id="project-modal-docs" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="document-text-outline"></ion-icon>
+            <span>Documentation</span>
+          </a>
+        </footer>
+      </div>
+    </div>
   </div>
 
   <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top" hidden>

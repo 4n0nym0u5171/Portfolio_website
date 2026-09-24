@@ -30,8 +30,8 @@
       <div class="section-container">
         <div class="filter-tabs" role="tablist" aria-label="Project categories" id="filter-tabs">
           <button role="tab" aria-selected="true" class="filter-tab active" data-filter="all">All Projects</button>
-          <button role="tab" aria-selected="false" class="filter-tab" data-filter="Web App">Web Applications</button>
-          <button role="tab" aria-selected="false" class="filter-tab" data-filter="Soft App">Software Applications</button>
+          <button role="tab" aria-selected="false" class="filter-tab" data-filter="Website Application">Web Applications</button>
+          <button role="tab" aria-selected="false" class="filter-tab" data-filter="Software Application">Software Applications</button>
           <button role="tab" aria-selected="false" class="filter-tab" data-filter="In Progress">In Progress</button>
         </div>
         <div class="works-grid" id="works-grid" role="tabpanel" aria-label="Projects"></div>
@@ -44,6 +44,54 @@
       </div>
     </section>
   </main>
+
+  <!-- Project Modal -->
+  <div class="project-modal-overlay" id="project-modal-overlay" aria-hidden="true"></div>
+  <div class="project-modal-container" id="project-modal-container" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <button class="project-modal-close" id="project-modal-close" aria-label="Close modal">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+    <div class="project-modal-body">
+      <!-- Media Panel (Left) -->
+      <div class="project-modal-media" id="project-modal-media">
+        <div class="project-modal-slideshow" id="project-modal-slideshow">
+          <button class="slideshow-nav slideshow-prev" id="slideshow-prev" aria-label="Previous screenshot">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </button>
+          <div class="slideshow-track" id="slideshow-track"></div>
+          <button class="slideshow-nav slideshow-next" id="slideshow-next" aria-label="Next screenshot">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </div>
+        <div class="slideshow-pagination" id="slideshow-pagination" aria-label="Screenshot navigation"></div>
+      </div>
+
+      <!-- Details Panel (Right) -->
+      <div class="project-modal-details" id="project-modal-details">
+        <header class="project-modal-header">
+          <span class="project-modal-category" id="project-modal-category"></span>
+          <h2 id="project-modal-title" class="project-modal-title"></h2>
+        </header>
+        <div class="project-modal-tags" id="project-modal-tags"></div>
+        <p class="project-modal-description" id="project-modal-description"></p>
+        <section class="project-modal-features" id="project-modal-features-section" aria-labelledby="features-title">
+          <h3 id="features-title" class="project-modal-features-title">Key Features</h3>
+          <ul class="project-modal-features-list" id="project-modal-features-list"></ul>
+        </section>
+        <footer class="project-modal-actions" id="project-modal-actions">
+          <a href="#" class="project-modal-btn project-modal-btn--primary" id="project-modal-github" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="logo-github"></ion-icon>
+            <span>Source Code</span>
+          </a>
+          <a href="#" class="project-modal-btn project-modal-btn--secondary" id="project-modal-docs" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="document-text-outline"></ion-icon>
+            <span>Documentation</span>
+          </a>
+        </footer>
+      </div>
+    </div>
+  </div>
 
   <div class="modal-overlay" id="modal-overlay" aria-hidden="true"></div>
   <div class="modal-container" id="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
